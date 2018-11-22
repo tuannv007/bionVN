@@ -3,6 +3,7 @@ import { View,Text } from 'react-native'
 import SendPoint from './sendPoint.js'
 import Test from './test'
 import { createBottomTabNavigator } from 'react-navigation';
+import Counter from './counter';
 
 export default createBottomTabNavigator({
     SendPoint: {
@@ -13,7 +14,8 @@ export default createBottomTabNavigator({
             headerRight: null,
           })
     },
-    Test: { screen: Test }
+    Test: { screen: Test },
+    Counter :{screen : Counter}
 }, {
         tabBarOptions: {
             activeTintColor: 'green',
