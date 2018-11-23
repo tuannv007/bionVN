@@ -7,20 +7,29 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "16.6.1",
     "react-native": "0.57.5",
+    "react-native-complete-flatlist": "^1.1.30",
+    "react-native-elements": "^1.0.0-beta7",
+    "react-native-fontawesome": "^6.0.0",
     "react-native-gesture-handler": "^1.0.9",
     "react-native-material-bottom-navigation": "^1.0.2",
+    "react-native-modalbox": "^1.6.0",
+    "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^3.0.0",
     "react-navigation-tabs": "^1.0.0",
     "react-redux": "^5.1.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
+    "babel-preset-react-native": "^2.1.0",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.49.2",
-    "react-test-renderer": "16.6.1"
+    "react-test-renderer": "16.6.1",
+    "ws": "3.3.2"
   },
   "jest": {
     "preset": "react-native"

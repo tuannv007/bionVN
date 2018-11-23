@@ -1,6 +1,4 @@
-import numberReducer from '../reducers/CounterReducer';
-import Counter from '../components/counter';
-import { connect } from 'react-redux';
+
 export const addNumber = (value) => {
     return {
         type: 'ADD_NUMBER',

@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { View,Text } from 'react-native'
-import SendPoint from './sendPoint.js'
-import Test from './test'
+import React, { Component } from 'react';
+import { View,Text } from 'react-native';
+import SendPoint from './sendPoint.js';
+import Test from '../container/TestContainer';
 import { createBottomTabNavigator } from 'react-navigation';
 import Counter from './counter';
 
