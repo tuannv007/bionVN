@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View, TextInput, Button, ActivityIndicator } from 'react-native';
-import { connect } from 'react-redux';
-import { loginAction } from '../actions/LoginAction';
-import axios from 'axios';
 
 export default class LoginScreen extends Component {
     static navigationOptions = {
@@ -15,7 +12,6 @@ export default class LoginScreen extends Component {
             fontWeight: 'bold',
         },
     };
-    
 
     constructor(props) {
         super(props);
@@ -23,39 +19,21 @@ export default class LoginScreen extends Component {
             username: '',
             password: '',
             tokenVN: '',
-            isLoading: false,
+            isLoading: false
         };
     }
 
-    componentDidMount(){
-        console.log("componentDidMount",this.props);
+    loginVN() {
+        console.log("vao day")
+        this.props.loginA(this.state.username, this.state.password)
     }
-    login(e) {
-        //this.props.loginA(this.state.username, this.state.password);
-        //alert(this.state.username);
-        //e.preventDefault();
-        this.setState({ isLoading: true })
-        axios
-            .post('https://reqres.in/api/login',
-                {
-                    'email': this.state.username,
-                    'password': this.state.password
-                }
-            )
-            .then((response) => {
-                this.props.loginA(this.state.username, this.state.password),
-                this.setState({ tokenVN: response.data.token, isLoading: false }),
-                this.props.navigation.navigate('Main'),
-                console.log("tuanbg",this.state.username);
-            })
-            .catch((err) => console.log(err))
-    }
+
     render() {
         return (
             <View style={styles.viewContainer
             }>
-            <Text>{this.props.username}  + aaaaaaaas</Text>
-            
+                <Text>{this.props.username}  + aaaaaaaas</Text>
+
                 <View style={styles.viewGroupName}>
                     <Text>Tên tổ chức</Text>
                     <TextInput
@@ -83,10 +61,10 @@ export default class LoginScreen extends Component {
                     <Button
                         title="Đăng Nhập"
                         color="#841584"
-                        onPress={(e) => this.login(e)}
+                        onPress={() => this.loginVN()}
                     />
                 </View>
-                {this.state.isLoading && (
+                {!this.props.isLogin && (
                     <ActivityIndicator
                         style={{ height: 80 }}
                         color="#C00"
